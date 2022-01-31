@@ -17,7 +17,7 @@ const ProgressBar = ({maxValue,color}) => {
       
       useEffect(() => {
         if (percentage<progressBar) updatePercentage()
-      }, [percentage, progressBar, updatePercentage])
+      }, [percentage, progressBar])
 
 
     return (
