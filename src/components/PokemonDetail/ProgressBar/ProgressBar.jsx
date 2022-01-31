@@ -9,14 +9,18 @@ const ProgressBar = ({maxValue,color}) => {
     const progressBar = maxValue;
     const [percentage, setPercentage] = useState(0)
 
-    const updatePercentage = () => {
-        setTimeout(() => {
-          setPercentage(percentage + 1)
-        }, 10)
-      }
+    // const updatePercentage = () => {
+    //     setTimeout(() => {
+    //       setPercentage(percentage + 1)
+    //     }, 10)
+    //   }
       
       useEffect(() => {
-        if (percentage<progressBar) updatePercentage()
+        if (percentage<progressBar){
+            setTimeout(() => {
+                              setPercentage(percentage + 1)
+                             }, 10)
+        }
       }, [percentage, progressBar])
 
 
