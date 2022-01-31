@@ -1,0 +1,272 @@
+.pokedex-container{
+    padding: 50px 0;
+}
+
+.image-rotate{
+    background-image: url('../../images/pokeballRotate.png ');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    height: 300px;
+    width: 300px;
+    animation: rotate 4s linear infinite;
+    filter:opacity(.05); 
+    top: -7vh;
+    right: -7vw;   
+}
+ 
+.name{ 
+    margin: 20px 10vw 40px 10vw;
+    display: flex;
+    align-items: center;
+}
+
+
+.name img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.322);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .3s; 
+}
+
+.name img:hover{
+    transform: scale(1.1); 
+}
+.name h1{
+    font-weight: 900;
+    font-size: 40px;
+}
+.name p{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.background{
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.buttons button{
+    padding: 10px;
+}
+
+
+.pokemon-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.button h2{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.lbl-switch{
+    display: inline-block;
+    width: 80px;
+    height: 38px;
+    background-color: rgb(72, 208, 176);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    margin: 0px 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#btn-switch:checked~ .lbl-switch{
+    background-color: rgb(251, 108, 108);
+}
+
+.lbl-switch::after{
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    border-radius: 100px;
+    top:4px;
+    left: 5px;
+    transition: 0.5s;
+}
+
+#btn-switch:checked~ .lbl-switch::after{
+    left: 44px;
+}
+
+#btn-switch{
+    display: none;
+}
+
+
+.input{
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.input select, input{
+    width: 80vw;
+    height: 50px;
+    max-width: 400px;
+    border-radius: 100px;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
+    padding: 0 30px;
+    transition: 0.2s;
+    appearance:none;
+    position: relative;;
+}
+
+.input select option{
+    outline: none;
+    margin-top: 2222px;
+    appearance:none
+    
+}
+
+.settings{
+    border: 0;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: rgb(68, 120, 148);
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 90vh;
+    left: 82vw;
+    z-index: 1001;
+    transition: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings:hover{
+    transform:rotate(360deg);
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    
+}
+
+.buttons button{
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgb(68, 120, 148);
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+    scroll-margin-top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.buttons button:hover{
+    background-color: rgb(15, 92, 134);
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .input select, input, .button h2, .name p {
+        font-size: 18px;
+    }
+
+    .settings{
+        left: 85vw;
+    }
+
+    .name img{
+        width: 90px;
+        height: 90px;
+    }    
+    
+    .image-rotate{
+        height: 400px;
+        width: 400px;
+    }
+ }
+
+ @media only screen and (min-width: 768px) {
+    .input select, input, .button h2, .name p{
+        font-size: 20px;
+    }
+
+    .name img{
+        width: 120px;
+        height: 120px;
+    }    
+
+    
+    .buttons button{
+    
+        width: 45px;
+        height: 45px; 
+    
+    }
+
+    .settings{
+        top: 85vh;
+    }
+ }
+
+
+ @media only screen and (min-width: 992px) {
+    .input select, input{
+        max-width: 500px;
+    }
+
+    .settings{
+        left: 90vw;
+        width: 60px;
+        height: 60px;
+    }
+
+    .image-rotate{
+        height: 500px;
+        width: 500px;
+    }
+}

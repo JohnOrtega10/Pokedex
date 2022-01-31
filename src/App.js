@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Pokedex from './pages/Pokedex/PokemonList';
+import PokemonInfo from './pages/PokemonDetail/PokemonDetail';
+import Settings from './pages/Settings/Settings';
+import { useSelector } from 'react-redux';
+import ProtectedRoutes from './components/Custom/ProtectedRoutes';
+
+
 
 function App() {
+
+  const isDark = useSelector(state=>state.isDark)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isDark?'dark':null}`} >
+     <HashRouter>
+       
+       <Routes>
+         <Route path='/' element={<Home/>}/>
+         <Route element={<ProtectedRoutes/>}>
+            <Route path='/pokedex' element={<Pokedex/>}/>
+            <Route path='/pokedex/:name' element={<PokemonInfo/>}/>
+            <Route path='/settings' element={<Settings/>}/>
+         </Route>
+       </Routes>
+     </HashRouter>
     </div>
   );
 }

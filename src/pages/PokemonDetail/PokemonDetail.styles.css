@@ -1,0 +1,229 @@
+
+.detail-container{
+   display: flex;  
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 80px 0px;
+}
+
+.detail-container button{
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    cursor: pointer;
+    color: rgb(68, 120, 148);
+    top: 20px;
+    right: 82vw;
+}
+
+.principal-container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;   
+}
+
+.principal-container img{
+    width: 250px;
+    height: 250px;
+    filter: drop-shadow(15px 15px 5px rgba(0,0,0,0.7));  
+}
+
+.principal-container .principal{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../images/pokeballDetail.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.principal-container .principal h1{
+    font-weight: 800;
+    font-size: 38px;
+    color: white;
+    text-align: center;
+}
+
+.principal-container .principal h1::first-letter{
+    text-transform: uppercase;
+}
+
+.principal-container .principal .types div{
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.principal-container .principal .types{
+    width: 100%;
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.principal-container .principal .types div+div{
+    margin-left: 20px;
+}
+
+.principal-container .principal .types div p::first-letter{
+    text-transform: uppercase;
+}
+
+.principal-container .dimensions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px ;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.principal-container .dimensions > div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 49%;
+    padding: 40px 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal-container .dimensions .height{
+    flex-direction: column;
+}
+
+.principal-container .dimensions  div h2{
+    font-weight: 700;  
+}
+
+.principal-container .dimensions  div p{
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+    font-weight: 700;
+    background-color: #90AACB;
+    text-align: center;
+    margin: 5px;
+}
+
+.principal-container .dimensions  div p::first-letter{
+    text-transform: uppercase;
+}
+
+.principal-container .dimensions div div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stats{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.stats div{
+    margin: 10px;
+    text-align: center;
+}
+
+.stats div p{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.stats div p::first-letter{
+    text-transform: uppercase;
+}
+
+.detail-container .settings{
+    border: 0;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: rgb(68, 120, 148);
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 90vh;
+    left: 80vw;
+    z-index: 1001;   
+}
+
+
+ @media only screen and (min-width: 600px) {
+    .detail-container button{
+        right: 87vw;
+    }
+
+    .detail-container .settings{  
+        left: 85vw;
+    }
+}
+
+ @media only screen and (min-width: 768px) {
+    .principal-container img{
+        width: 300px;
+        height: 300px;     
+    }
+
+    .detail-container button{
+        right: 90vw;
+    }
+
+    .detail-container .settings{
+        left: 90vw;
+    }
+ }
+
+
+ @media only screen and (min-width: 992px) {
+    .principal-container{
+        max-width: 950px;
+    }
+
+    .stats{
+        max-width: 950px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .principal-container{
+        max-width: 760px;
+    }
+
+    .principal-container .dimensions  div p{
+        width: 150px;   
+    }
+    
+    .stats{
+        max-width: 400px;
+        margin-left: 20px;
+        padding: 0px 0px;
+        margin-top: 0px;
+        padding: 40px 0px;
+    }
+
+    .stats div{
+       margin: 3px 10px;  
+    }
+   
+}

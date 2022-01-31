@@ -1,0 +1,151 @@
+
+.settings-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.settings-container button{
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    left: 35vw;
+    cursor: pointer;
+    color: rgb(68, 120, 148);
+}
+
+.settings-container h1{
+    margin-bottom: 40px;
+}
+
+.button-switch{
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.button-switch h2, .items h2{
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.button-switch>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lbl-switch{
+    display: inline-block;
+    width: 70px;
+    height: 38px;
+    background-color: rgb(68, 120, 148);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    margin: 0px 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#btn-switch:checked~ .lbl-switch{
+    background-color: rgb(251, 108, 108);
+}
+
+
+
+.lbl-switch::after{
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    border-radius: 100px;
+    top:4px;
+    left: 5px;
+    transition: 0.5s;
+}
+
+#btn-switch:checked~ .lbl-switch::after{
+    left: 34px;
+}
+
+#btn-switch{
+    display: none;
+}
+
+.items{
+    width: 80vw;
+    height: 20vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.items select{
+    border-radius: 100px;
+    font-size: 20px;
+    border: 0;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
+    padding: 10px 30px;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .settings-container button{
+        left: 40vw;
+    }
+
+    .settings-container h1{
+        font-weight: 800;
+        font-size: 40px;
+    }
+
+    .button-switch{
+        width: 500px;
+        height: 200px;      
+    }
+
+    .button-switch h2, .items h2{
+        font-size: 28px;
+        font-weight: 700;  
+    }
+
+    .lbl-switch{
+        width: 80px;
+        height: 38px;   
+    }
+
+    #btn-switch:checked~ .lbl-switch::after{
+        left: 44px;
+    }
+
+    .items{
+        width: 500px;
+        height: 200px;
+    }
+
+    .items select{
+        width: 200px;
+        height: 50px;
+        padding: 0px 30px;
+    }
+}
+
+ 
